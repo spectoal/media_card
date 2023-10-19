@@ -18,9 +18,8 @@ button:hover {
 
 .media_card {
     background-color: #575151;
-     
-    position: absolute;
-    
+    display: flex;
+    flex-direction: column;    
     border-radius: 15px;
     width: 48rem;
     height: 42rem;
@@ -32,44 +31,42 @@ button:hover {
 
 
 header {
-    position: absolute;
+    position: relative;
 }
 header  img {
-    
     border-radius: 15px 15px 0px 0px;
     z-index: 3;
-
-    top: 50%;
-    transform: translate(0%, -33%);
 }
 header  button {
     background-color: rgba(0,0,0,0.5);
-    font-size: 100px;
-    color: whitesmoke;
+    font-size: 50px;
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: whitesmoke;
     z-index: 5;
-
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -150%);
   clip-path:circle();
 }
 header  button:hover {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(207, 205, 205, 0.5);
 }
 header .material-symbols-outlined {
-    font-size: 8rem;
+    font-size: 5rem;
     font-variation-settings: 'wght' 400;
 }
 
 
 section {
-    z-index: 10;
-     display: flex;
-    height: 13rem;
+    display: flex;
     flex-direction: column;
+    z-index: 10;
+    height: 13rem;
     justify-content: space-around;
     color: whitesmoke;
+}
+section > * {
+    position: relative;
 }
 section  button {
     color: #ADAAAA;
@@ -82,7 +79,6 @@ section .material-symbols-outlined {
     font-variation-settings: 'wght' 200;
 }
 
-
 .buttons {
     justify-content: space-between;
 }
@@ -91,11 +87,33 @@ section .material-symbols-outlined {
 }
 
 
-.stats, .tags {
-    margin: 0 1rem;
-  }
-.stats > span:not(:first-of-type), .tags > span:not(:first-of-type) {
-    display: inline-block;
-    margin: auto .2em;
-  }
 
+.stats {
+    justify-content: space-between;
+    top: 50%;
+    left: 50%;
+    transform: translate(-45%, -135%);
+}
+.stats > *:not(:nth-child(2)) {
+    border: 2px solid #ffffff;
+    padding: 15px;
+    border-radius: 15px;
+    margin-left: 10px;
+    margin-right: 25px;
+}
+.stats > *:nth-child(2) {
+    transform: translate(-50%, 29% );
+}
+.stats > *:nth-child(3) {
+    transform: translate(-70%, 25%); 
+}
+
+.tags {
+    justify-content: space-between;
+    top: 50%;
+    left: 50%;
+    transform: translate(-47%, -200%);
+}
+.tags :last-child {
+    margin-left: auto;
+}
